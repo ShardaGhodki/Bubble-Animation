@@ -2,28 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sample Buggy HTML</title>
+    <!-- Bug: Missing viewport meta tag for responsive design -->
+    <style>
+        /* Bug: Inline styles should be avoided */
+        .text-red { color: red; }
+        #unused-id { color: blue; }
+    </style>
 </head>
 <body>
-    <div class="wrapper">
-        <h1>Bubbles Animation</h1>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-        <div><span class="dot"></span></div>
-    </div>
-
-
+    <header>
+        <!-- Bug: Missing alt attribute -->
+        <img src="logo.png">
+        <nav>
+            <ul>
+                <!-- Bug: Incorrect nesting of <li> elements -->
+                <li><a href="#home">Home</a>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home">
+            <h1>Welcome to Our Website</h1>
+            <p class="text-red">This is a sample paragraph with inline styling.</p>
+            <!-- Bug: Deprecated <center> tag -->
+            <center><p>Centered text using deprecated tag.</p></center>
+        </section>
+        
+        <section id="about">
+            <h2>About Us</h2>
+            <!-- Bug: Non-semantic tag usage (should use <p> or <div>) -->
+            <font>This is about us section using <font> tag.</font>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <!-- Bug: Inline event handlers should be avoided -->
+            <button onclick="alert('Button clicked!')">Click Me</button>
+        </section>
+    </main>
+    
+    <footer>
+        <!-- Bug: Hardcoded email address -->
+        <p>Contact us at <a href="mailto:info@example.com">info@example.com</a></p>
+    </footer>
 </body>
 </html>
